@@ -1,0 +1,45 @@
+.switcher { /* this can be whatever selector you want */
+  width: 910px; /* the full width of the switcher */
+  position: relative; /* important */
+  font-family: Volkorn;
+  margin: -4px;
+}
+.switcher > div {
+  height: 80px; /* the height of the boxes when collapsed */
+  position: absolute;
+  left: 660px; /* the width of the switcher minus the outer width of the collapsed boxes (including margin, padding and border) */
+  right: 0; /* important */
+  margin: 4px; /* the margin between collapsed boxes */
+  padding: 5px; /* the padding for the collapsed boxes */
+  border: 1px solid #C2C2C2; /* the border for collapsed boxes */
+  background: #e3e3e3;
+  overflow: hidden; /* important */
+}
+.switcher > div .content {
+  opacity: 0; /* impotant */
+}
+.switcher > div > h3 {
+  text-align: center;
+  line-height: 80px; /* used to vertically center the text in collapsed boxes, should be the height of the collapsed boxes */
+  font-size: 24px;
+  font-family: "Droid Sans";
+}
+.switcher .active {
+  height: auto; /* important */
+  width: auto; /* important */
+  top: 0; /* important */
+  left: 0; /* important */
+  bottom: 0; /* important */
+  right: 250px; /* the outer width of the collapsed boxes */
+}
+.switcher .active .content {
+  opacity: 1; /* important */
+}
+.switcher .active > h3 {
+  line-height: 48px; /* the line height of the box heading when active */
+}
+p {
+  line-height: 22px;
+  font-size: 14px;
+  padding: 5px;
+}

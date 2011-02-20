@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://github.com/adrusi/CSS-Reset/raw/master/reset.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Vollkorn:regular,italic,bold,bolditalic|Droid+Sans:regular,bold" />
+    <link rel="stylesheet" href="jQuery.danceSwitcher.css" />
+    <title>danceSwitcher Demo</title>
+  </head>
+  <body>
+    <div class="switcher">
+      <div>
+        <h3>Sputnik</h3>
+        <div class="content">
+          <p>In October 1957, the Soviets launched the first spacecraft named Sputnik I. The ability of the Soviets to successfully execute such a task sparked a fear in Americans that the Soviets would also be capable of using their rockets to propel a nuclear missile across the ocean; to build an intercontinental ballistic missile (ICBM). This fear increased the already high Cold War tensions, but backfired on the Soviets. As a direct effect of Sputnik's launch, Congress passed the National Aeronautics and Space Act of 1958 (commonly called just "Space Act"). The Space Act created NASA and made space research a top priority for the US.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Explorer I</h3>
+        <div class="content">
+          <p>In order to prevent one nation from dominating the space "real estate", the US set a precedent for space missions to be mainly scientific. Explorer I was the first satellite to gather useful scientific data. Both Sputnik I and II were purely tests of the capabilities of current technology. Although the publicized purpose of the space missions was scientific, both nations executed secret or disguised missions whose purposes were militial or reconnaissance.</p>
+        </div>
+      </div>
+      <div>
+        <h3>The U2 Incident</h3>
+        <div class="content">
+          <p>The U2 incident involved the gunning down of a US airplane by the Soviets. Assuming the plane was completely destroyed, the US governemnt lied about the purpose of the plane, saying it was a NASA research aircraft. This proved to be a great embarrassment to the US. The plane was enough intact for the Soviets to see its true purpose, reconnaissance. The U2 incident was the first publicized occurrence of the United States engaging in covert operations, something that many Americans had thought only the Soviets engaged in.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Government Forms</h3>
+        <div class="content">
+          <p>Because the Communist form of government was so vastly different than Democracy, the two opposing nations had to use different strategies. Unlike in a democracy, the Soviets were able to keep entire operations secret, including rocket launches. The communist government was able to keep the media quiet and therefore have complete control over the information released. The United States, however, was not able to manipulate its media and thus resorted to other methods of keeping secrets. NASA disguised missions whose goals were to spy on the Soviet Union as scientific missions. One example is the Corona missions, which were publicly known as part of the Discoverer program, but in truth were secret military satellites.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Gagarin's Flight</h3>
+        <div class="content">
+          <p>When the Soviets made cosmonaut Yuri Gagarin the first man in space, they beat the United Stated by only 23 days, after which Alan Shepard became the first American in space. This significant landmark in the Space Race was a similar surprise to the US as the launch of Sputnik. As with Sputnik, the US did not fall back, but rather upped the ante. As a direct effect of Yuri Gagarin's flight, President Kennedy delivered his famous challenge to his nation&mdash;to send a man to the moon and back. The public challenge was also accepted by the Soviets, who understood that NASA would be more competitive with the challenge. The pace of the Space Race increased, and the two nations became significantly more competitive.</p>
+        </div>
+      </div>
+      <div>
+        <h3>Apollo 1 Fire</h3>
+        <div class="content">
+          <p>One of the most famous disasters in NASA's history is the Apollo 1 fire. A fire in a test spacecraft caused by a pure oxygen atmosphere killed three astronauts. This tragedy could have been avoided had it not been for the Soviet's cover-up of its mistakes. The Soviet space program learned early on that pure oxygen atmospheres were very hazardous. Long before the Apollo 1 disaster, the Soviets experienced a similar disaster that resulted in the death of cosmonaut Valentin Bondarenko. This example of secrecy directly resulted in the death of three of NASA's astronauts.</p>
+        </div>
+      </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script src="jQuery.danceSwitcher.js"></script>
+    <script>
+      $('.switcher').danceSwitcher({
+        speed: 2.5, // the speed multiplier, use trial and error to get the best speed :D (hint: bigger is faster)
+        collapsedWidth: 230, // the width of boxes when collapsed (not including margin, padding and border)
+        collapsedHeight: 80, // the height of boxes when collapsed (not including margin, padding and border)
+        collapsedMPB: [10, 10, 10, 10], // the sum of margin, padding and border for each side (top, right, bottom, left)
+        collapsedLineHeight: 80, // the line-height of the box headings when collapsed
+        activeLineHeight: 48 // the line-height of the box headings when active
+      });
+    </script>
+  </body>
+</html>
