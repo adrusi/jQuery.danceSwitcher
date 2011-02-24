@@ -22,7 +22,7 @@ The HTML structure for the switcher is as follows:
       <!-- create as many boxes as you want -->
     </div>
 
-The javascript to initialize the Switcher is:
+The javascript to initialize the switcher is:
 
     $('.switcher').danceSwitcher({
       speed: 1, // the speed multiplier, use trial and error to get the best speed :D (hint: bigger is faster)
@@ -30,7 +30,14 @@ The javascript to initialize the Switcher is:
       collapsedHeight: 80, // the height of boxes when collapsed (not including margin, padding and border)
       collapsedMPB: [10, 10, 10, 10], // the sum of margin, padding and border for each side (top, right, bottom, left)
       collapsedLineHeight: 80, // the line-height of the box headings when collapsed
-      activeLineHeight: 48 // the line-height of the box headings when active
+      activeLineHeight: 48, // the line-height of the box headings when active
+      animationSequence 'prev/next' // one of a few preset animation sequences. Currently only prev/next and first/last.
     });
 
 The values above are the defaults.
+
+Animation Sequences
+-------------------
+The default prev/next animation sequence moves the previously active box to the box immediately above or below the just clicked box.
+
+The first/last animation sequence moves the previously active box to the box on the top or bottom of the sidebar.
