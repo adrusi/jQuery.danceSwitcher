@@ -41,3 +41,7 @@ Animation Sequences
 The default prev/next animation sequence moves the previously active box to the box immediately above or below the just clicked box.
 
 The first/last animation sequence moves the previously active box to the box on the top or bottom of the sidebar.
+
+License
+-------
+[GPL](http://www.opensource.org/licenses/gpl-3.0.html)
