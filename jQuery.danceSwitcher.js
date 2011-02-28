@@ -9,7 +9,7 @@
         collapsedLineHeight: '80px',
         activeLineHeight: '48px',
         animationSequence: 'prev/next'
-      },
+      };
       options = $.extend(defaults, options);
       return $(this).each(function() {
         var $this = $(this),
@@ -21,7 +21,7 @@
         for (i = 1; i < $this.children('div').length; i++) { // position all of the boxes appropriately
           $this.children('div').eq(i).css('top', (i - 1) * (options.collapsedHeight + options.collapsedMPB[0] + options.collapsedMPB[2]) + 'px');
         }
-        if (!options.animationSequence === 'prev/next') { // using the default animation
+        if (options.animationSequence === 'prev/next') { // using the default animation
           $this.children('div').click(function() { // bind aclick event to all the boxes
             var $$this = $(this);
             if (!$$this.hasClass('active') && !$this.hasClass('inprogress')) { // if the box clicked isn't already active and there isn't already animation going on
@@ -45,7 +45,7 @@
                 bottom: $this.height() - $$this.position().top - (options.collapsedHeight + options.collapsedMPB[0] + options.collapsedMPB[2]),
                 height: 'auto'
               });
-              $this.children('.active').animate({
+              $this.children('.active').css('height', $this.children('.active').height()).animate({
                 top: next.css('top'), // move the active box to the vertical position of its final destination
                 height: options.collapsedHeight // make its height the height of a collapsed box
               }, 750 / speed, function() {
@@ -92,25 +92,26 @@
           $this.children('div').click(function() {
             var $$this = $(this), active = $this.children('.active'), last = !$$this.next().get(0), alreadyCalled = false,
                 callback = function() {
-                  active.animate({
+                  console.log($this.width() - (options.collapsedWidth + options.collapsedMPB[1] + options.collapsedMPB[3]));
+                  active.css('bottom', 'auto').animate({
                     right: 0,
-                    left: $this.width() - (options.collapsedWidth + options.collapsedMPB[1] + options.collapsedMPB[3]),
-                    bottom: 'auto'
+                    left: $this.width() - (options.collapsedWidth + options.collapsedMPB[1] + options.collapsedMPB[3])
                   }, 750 / speed, function() {
                     $$this.animate({
                       top: 0,
                       bottom: 0
                     }, 750 / speed).children('h3').animate({
                       lineHeight: options.activeLineHeight
-                    }, 750 / speed).end().children('.content').animate({
+                    }, 750 / speed);
+                    $$this.children('.content').animate({
                       opacity: 1
                     }, 750 / speed, function() {
-                      
-                      console.log('showing: ' + active.children('.content').css('opacity'));
-                      if (!last)
+                      if (!last) {
                         active.appendTo($this).removeClass('active');
-                      else
+                      }
+                      else {
                         active.prependTo($this).removeClass('active');
+                      }
                       $$this.prependTo($this).addClass('active');
                       $this.removeClass('inprogress');
                     });
@@ -120,11 +121,10 @@
               $this.addClass('inprogress');
               active.children('h3').animate({
                 lineHeight: options.collapsedLineHeight
-              });
+              }, 750 / speed);
               active.children('.content').animate({
                 opacity: 0
-              });
-              console.log('hiding: ' + active.children('.content').css('opacity'));
+              }, 750 / speed);
               active.animate({
                 top: (!last) ? $this.height() - options.collapsedHeight - options.collapsedMPB[0] - options.collapsedMPB[2] : 0,
                 bottom: (!last) ? 0 : $this.height() - options.collapsedHeight - options.collapsedMPB[0] - options.collapsedMPB[2]
@@ -147,7 +147,7 @@
                       $$$this.animate({
                         top: $$$this.position().top - (options.collapsedHeight + options.collapsedMPB[0] + options.collapsedMPB[2])
                       }, 750 / speed, function() {
-                        if (!alreadyCalled) callback();
+                        if (!alreadyCalled) { callback(); }
                         alreadyCalled = true;
                       });
                     });
@@ -158,7 +158,7 @@
                       $$$this.animate({
                         top: $$$this.position().top + (options.collapsedHeight + options.collapsedMPB[0] + options.collapsedMPB[2])
                       }, 750 / speed, function() {
-                        if (!alreadyCalled) callback();
+                        if (!alreadyCalled) { callback(); }
                         alreadyCalled = true;
                       });
                     });
@@ -171,4 +171,4 @@
       });
     }
   });
-})(jQuery);
+}(jQuery));

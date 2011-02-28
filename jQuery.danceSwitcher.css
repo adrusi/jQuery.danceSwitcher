@@ -2,7 +2,6 @@
   width: 910px; /* the full width of the switcher */
   position: relative; /* important */
   font-family: Volkorn;
-  margin: -4px;
 }
 .switcher > div {
   height: 80px; /* the height of the boxes when collapsed */
