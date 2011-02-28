@@ -1,6 +1,6 @@
 jQuery danceSwitcher Plugin
 ===========================
-The danceSwitcher plugin creates a content switcher with a unique and dazzling effect. A screenshot won't do it justice, so you'll have to [try it out for yourself](http://dl.dropbox.com/u/5187475/danceSwitcher/demo.html). The plugin is still in its early stages and there are definitely more features to implement, but the current version is fully functional and reasonably flexible.
+The danceSwitcher plugin creates a content switcher with a unique and dazzling effect. A screenshot won't do it justice, so you'll have to [try it out for yourself](http://dl.dropbox.com/u/5187475/jQuery-transitions/dance.html). The plugin is still in its early stages and there are definitely more features to implement, but the current version is fully functional and reasonably flexible.
 
 The documentation for how to create your css file is found in the file `jQuery.danceSwitcher.css`. All lines that have comments are essential to the plugin's behavior. Lines marked as Important should not be tampered with.
 
